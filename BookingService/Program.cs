@@ -33,11 +33,11 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 
 // Swagger UI för test
-if (app.Environment.IsDevelopment())
-{
+
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+
+
 app.UseCors();
 app.UseAuthorization();
 app.MapControllers();
