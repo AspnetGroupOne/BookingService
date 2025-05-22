@@ -67,7 +67,7 @@ Deletes the booking with the specified ID.
 ## Technologies Used
 - ASP.NET Core Web API (.NET 8)
 - Entity Framework Core
-- SQL Server
+- SQL Server (Azure SQL)
 - Swagger for testing
 
 ## Deployment
