@@ -29,6 +29,9 @@ builder.Services.AddCors(options =>
     });
 });
 
+builder.Services.AddHttpClient<ExternalEventService>();
+
+
 
 var app = builder.Build();
 

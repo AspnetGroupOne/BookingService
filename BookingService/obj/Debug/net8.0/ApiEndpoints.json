@@ -77,5 +77,15 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookingService.Controllers.BookingController",
+    "Method": "GetExternalEvents",
+    "RelativePath": "api/Booking/external-events",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

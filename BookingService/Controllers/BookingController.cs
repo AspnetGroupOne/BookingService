@@ -10,10 +10,12 @@ namespace BookingService.Controllers
     public class BookingController : ControllerBase
     {
         private readonly IBookingService _bookingService;
+        private readonly ExternalEventService _externalEventService;
 
-        public BookingController(IBookingService bookingService)
+        public BookingController(IBookingService bookingService, ExternalEventService externalEventService)
         {
             _bookingService = bookingService;
+            _externalEventService = externalEventService;
         }
 
         // GET: api/booking
@@ -72,6 +74,15 @@ namespace BookingService.Controllers
 
             _bookingService.UpdateBooking(id, updatedBooking);
             return Ok($"Booking with ID {id} has been updated.");
+        }
+
+
+        // GET: api/booking/external-events
+        [HttpGet("external-events")]
+        public async Task<IActionResult> GetExternalEvents()
+        {
+            var events = await _externalEventService.GetExternalEventsAsync();
+            return Ok(events);
         }
 
     }
