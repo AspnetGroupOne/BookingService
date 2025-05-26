@@ -5,7 +5,7 @@ A RESTful API for managing bookings in an event system. Built with ASP.NET Core 
 
 ## Base URL
 ```
-https://example.com/api/Bookings
+https://booking-api-example.azurewebsites.net/api/Booking
 ```
 
 ## Endpoints
@@ -72,6 +72,15 @@ Deletes the booking with the specified ID.
 
 ## Deployment
 The API is deployed to Microsoft Azure App Service.
+
+## External Microservice Integration
+
+This API connects to an external Event microservice:
+GET https://eventbookingsystemexample.azurewebsites.net/api/publicevents
+
+- Data is fetched using `HttpClient` in `ExternalEventService.cs`.
+- Events are mapped to `ExternalEventDto`.
+- Enables booking external events directly in this BookingService.
 
 ## Author
 Created by **Shahad Alkazzaz**  
